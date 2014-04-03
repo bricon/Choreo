@@ -1,0 +1,21 @@
+a {
+    color: green;
+    text-align:center;
+}
+
+/*
+body {
+    background: white url("images/banner.jpg") no-repeat center top;
+}
+*/
+
+#banner {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0px;
+	height: auto;
+	width: 100%;
+    z-index: -1;
+            }
+
