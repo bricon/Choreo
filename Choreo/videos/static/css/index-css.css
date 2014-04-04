@@ -1,0 +1,30 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.banner-img {
+	background-color: blue;
+	height: 500px;
+	background: url(../img/choreosplash.jpg);
+	overflow: hidden;
+    background-size: cover;
+	text-align: center;
+	display: table;
+	width: 100%;
+}
+
+.choreo-text{
+	width: 50%;
+	padding-top: 50px;
+    margin: 0 auto;
+    display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+
+
+    font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 200px;
+    color: white;
+    letter-spacing: 4px;
+}
