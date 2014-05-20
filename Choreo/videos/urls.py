@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-
 from videos import views
 
 urlpatterns = patterns('',

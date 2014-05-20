@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -23,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Choreo</a>
+          <a class="navbar-brand" href="#">choreo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,12 +66,43 @@
       </div><!-- /.container-fluid -->
   </nav>
 
+
   <!-- banner  -->
   <div class="banner-img">
     <div class="choreo-text">
       choreo
     </div>
   </div>
+
+
+
+  <!-- test -->
+  <video id="example_video_1" class="video-js vjs-default-skin"
+  controls preload="auto" width="640" height="264"
+  poster="http://video-js.zencoder.com/oceans-clip.png"
+  data-setup='{"example_option":true}'>
+ <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+ <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+ <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+ <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+  <!-- video section -->
+  <div class="video-section">
+    <div class="video-list">
+      {% if latest_video_list %}
+      <ul>
+      {% for video in latest_video_list %}
+          <a href="{% url 'videos:detail' video.id %}" class="video">{{ video.title }}</a>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>No videos are available.</p>
+      {% endif %}
+    </div>
+  </div>
+
+
 
 
   </body>
