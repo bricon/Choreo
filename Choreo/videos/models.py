@@ -9,3 +9,4 @@ class Video(models.Model):
 	choreographer = models.CharField(max_length=200)
 	song_title = models.CharField(max_length=200)
 	song_artist = models.CharField(max_length=200)
+	video_source = models.CharField(max_length=200)

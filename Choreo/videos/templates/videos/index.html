@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link href="{{STATIC_URL}}css/index-css.css" rel="stylesheet">
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.css"/>
   </head>
 
   <body>
@@ -76,34 +77,54 @@
 
 
 
-  <!-- test -->
-  <video id="example_video_1" class="video-js vjs-default-skin"
-  controls preload="auto" width="640" height="264"
-  poster="http://video-js.zencoder.com/oceans-clip.png"
-  data-setup='{"example_option":true}'>
- <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
- <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
- <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
- <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-</video>
 
   <!-- video section -->
   <div class="video-section">
+
     <div class="video-list">
+       <!-- test -->
+      <video id="example_video_1" class="video-js vjs-default-skin"
+      controls preload="auto" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup='{"example_option":true}'>
+     <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+     <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+     <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+     </video>
+
       {% if latest_video_list %}
       <ul>
+
       {% for video in latest_video_list %}
-          <a href="{% url 'videos:detail' video.id %}" class="video">{{ video.title }}</a>
+          <a href="{% url 'videos:detail' video.id %}" class="video">{{ video.video_source }}</a>
+          <video id="{{ video.id }}" class="video-js 4evjs-default-skin"
+        controls preload="auto" width="320" height="240"
+        data-setup='{"example_option":true}'>
+         <source src="{{video.video_source}}" type='video/webm' />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+         </video>
       {% endfor %}
+
       </ul>
       {% else %}
         <p>No videos are available.</p>
       {% endif %}
     </div>
+
+
+
+
+
+    <div class="video-list2">
+      </div>
+
+    <div class="video-list3" >
+    </div>
   </div>
 
 
 
-
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.min.js"/></script>
   </body>
 </html>

@@ -8,6 +8,8 @@ html, body {
 
 }
 
+video {display:inline;}
+
 nav.navbar {
 	opacity: .6;
 	background-color:#FCE6F2;
@@ -54,5 +56,11 @@ li.active {
 	color:white;
 	height: 500px;
 	width:100%;
+}
+
+.video-list{
+	background-color:#FCE6F2;
+	width:66.66%;
+	height:33.33%;
 }
 
